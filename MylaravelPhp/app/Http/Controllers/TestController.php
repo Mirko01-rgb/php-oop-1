@@ -9,12 +9,10 @@ class Movie{
   public $description;
 
 
-  public function __construct($title, $description = null){
-    $this -> title = $title;
-    $this -> description = $description;
-    if ($description == null) {
-      $this -> description = null;
-    }
+  public function __construct($titolo, $descrizione = null){
+    $this -> title = $titolo;
+    $this -> description = $descrizione;
+
   }
 
 
@@ -34,20 +32,14 @@ class TestController extends Controller
   public function home(){
 
     $films = new Movie ('In time', 'hshsjsjsjsjsjsjsjsjssjjs');
-    $film1 = $films -> getString();
+    $film1str = $films -> getString();
 
 
     $film2 = new Movie ('Pirati dei caraibi', 'hdhhdhdhdhd');
 
     $film3 = new Movie ('Re Leone');
 
-    dd($film1, $film2, $film3);
-
-
-
-
-
-
+    dd($film1str, $films, $film2, $film3);
 
     return view('pages.home');
   }
